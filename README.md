@@ -22,16 +22,15 @@ Primary themes:
 
 ## Results
 
-![Reward Comparison](artifacts/reward_comparison.png)
-*Rule-based committee vs random baseline across all 3 chaos levels.*
-
 ![Training Loss](artifacts/training_loss.png)
-*SFT loss over 200 training episodes — run via `training/ops_committee_colab.ipynb`.*
+*SFT loss over 200 training episodes across all 3 chaos levels.*
+
+![Reward Comparison](artifacts/reward_comparison.png)
 
 | Policy | Avg Reward | Clean Recovery | Failure Rate |
-| --- | ---: | ---: | ---: |
+|--------|----------:|---------------:|-------------:|
 | Random approve-all | -82.5 | 11.1% | 55.6% |
-| Rule-based committee | +69.8 | 100.0% | 0.0% |
+| Rule-based committee | +57.7 | 100.0% | 0.0% |
 
 ## Phase Status
 

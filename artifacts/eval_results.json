@@ -172,7 +172,7 @@
           "done": false,
           "reward": 0.0,
           "metadata": {
-            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
+            "episode_id": "e2d21221-68ce-442e-b871-6d6ec5bb6317",
             "step_count": 0
           },
           "message": "Environment reset. Incident channel is open.",
@@ -596,7 +596,7 @@
           "done": false,
           "reward": 8.92,
           "metadata": {
-            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
+            "episode_id": "e2d21221-68ce-442e-b871-6d6ec5bb6317",
             "step_count": 1
           },
           "message": "Proposal prop-0001 queued for Banker and Shield audits.",
@@ -1131,7 +1131,7 @@
           "done": false,
           "reward": 8.84,
           "metadata": {
-            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
+            "episode_id": "e2d21221-68ce-442e-b871-6d6ec5bb6317",
             "step_count": 2
           },
           "message": "Banker approved proposal prop-0001; awaiting shield.",
@@ -1748,7 +1748,7 @@
           "done": true,
           "reward": 69.836,
           "metadata": {
-            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
+            "episode_id": "e2d21221-68ce-442e-b871-6d6ec5bb6317",
             "step_count": 3
           },
           "message": "Rollback completed; memory leak disabled.",
