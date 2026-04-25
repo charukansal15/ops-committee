@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+
+# Local zip/extraction scratch space.
+_incoming_zip_review/
+
+# Reproducible/generated training outputs that should not bloat the Space.
+artifacts/sft_dataset.jsonl
+artifacts/trl_sft_ops_committee/

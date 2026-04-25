@@ -1,0 +1,2144 @@
+{
+  "summary": {
+    "random_approve_all": {
+      "episodes": 9.0,
+      "average_reward": -82.536,
+      "clean_recovery_rate": 0.111,
+      "failure_rate": 0.556
+    },
+    "rule_based_committee": {
+      "episodes": 9.0,
+      "average_reward": 69.914,
+      "clean_recovery_rate": 1.0,
+      "failure_rate": 0.0
+    }
+  },
+  "runs": [
+    {
+      "policy": "random_approve_all",
+      "level": 1,
+      "seed": 101,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 9,
+      "total_reward": 70.08
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 1,
+      "seed": 101,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 70.08
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 1,
+      "seed": 102,
+      "terminal_reason": "security_breach",
+      "steps": 6,
+      "total_reward": -232.48
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 1,
+      "seed": 102,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 70.08
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 1,
+      "seed": 103,
+      "terminal_reason": "step_limit",
+      "steps": 20,
+      "total_reward": 2.446
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 1,
+      "seed": 103,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 70.08
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 2,
+      "seed": 101,
+      "terminal_reason": "step_limit",
+      "steps": 20,
+      "total_reward": 2.42
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 2,
+      "seed": 101,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.836
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 2,
+      "seed": 102,
+      "terminal_reason": "security_breach",
+      "steps": 6,
+      "total_reward": -233.195
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 2,
+      "seed": 102,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.8
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 2,
+      "seed": 103,
+      "terminal_reason": "catastrophic_outage",
+      "steps": 13,
+      "total_reward": -60.09
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 2,
+      "seed": 103,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.859
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 3,
+      "seed": 101,
+      "terminal_reason": "step_limit",
+      "steps": 20,
+      "total_reward": 2.42
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 3,
+      "seed": 101,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.836
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 3,
+      "seed": 102,
+      "terminal_reason": "security_breach",
+      "steps": 6,
+      "total_reward": -233.195
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 3,
+      "seed": 102,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.8
+    },
+    {
+      "policy": "random_approve_all",
+      "level": 3,
+      "seed": 103,
+      "terminal_reason": "catastrophic_outage",
+      "steps": 12,
+      "total_reward": -61.229
+    },
+    {
+      "policy": "rule_based_committee",
+      "level": 3,
+      "seed": 103,
+      "terminal_reason": "recovered_cleanly",
+      "steps": 3,
+      "total_reward": 69.859
+    }
+  ],
+  "hero_trajectory": {
+    "policy": "rule_based_committee",
+    "level": 3,
+    "seed": 101,
+    "terminal_reason": "recovered_cleanly",
+    "steps": 3,
+    "total_reward": 69.836,
+    "trajectory": [
+      {
+        "observation": {
+          "done": false,
+          "reward": 0.0,
+          "metadata": {
+            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "step_count": 0
+          },
+          "message": "Environment reset. Incident channel is open.",
+          "alerts": [
+            "NOTICE: no hard alert, but incident investigation is still active."
+          ],
+          "logs": [
+            {
+              "step": 0,
+              "level": "info",
+              "source": "chaos_engine",
+              "message": "Level 3 incident initialized.",
+              "data": {
+                "visible_hint": "backend degradation expected"
+              }
+            }
+          ],
+          "process_table": [
+            {
+              "pid": 101,
+              "service": "frontend",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 319,
+              "service": "log-forwarder",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            },
+            {
+              "pid": 402,
+              "service": "api",
+              "state": "leaking",
+              "cpu_band": "nominal",
+              "memory_trend": "rising"
+            },
+            {
+              "pid": 733,
+              "service": "db",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            }
+          ],
+          "visible_metrics": {
+            "cpu": "nominal",
+            "memory": "nominal",
+            "disk": "nominal",
+            "latency": "nominal",
+            "errors": "nominal",
+            "budget": "healthy",
+            "health": "nominal",
+            "security": "clean"
+          },
+          "policy": {
+            "version": 1,
+            "least_privilege_required": true,
+            "allowed_public_ports": [
+              443,
+              8080
+            ],
+            "restricted_ports": [],
+            "public_root_access_allowed": false
+          },
+          "reward_breakdown": {},
+          "pending_feedback": [],
+          "pending_proposal": null,
+          "committee_status": {
+            "phase": "ready",
+            "proposal_id": null,
+            "required_approvers": [
+              "banker",
+              "shield"
+            ],
+            "received_approvals": [],
+            "missing_approvals": [],
+            "vetoes": []
+          },
+          "registered_tools": [
+            {
+              "name": "check_logs",
+              "description": "Inspect partial logs, process table, alerts, policy, and metric bands.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "restart_service",
+              "description": "Propose restarting a named service such as frontend, api, or db.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "target": "service name"
+              },
+              "cost_model": {
+                "fixed_cost": 4.0,
+                "cost_formula": "restart_cost"
+              }
+            },
+            {
+              "name": "scale_infrastructure",
+              "description": "Propose adding resource units to reduce pressure at a recurring cost.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer resource units"
+              },
+              "cost_model": {
+                "cost_per_unit": 28.0,
+                "recurring_cost_per_resource": 2.0,
+                "cost_formula": "scale_unit_cost * amount"
+              }
+            },
+            {
+              "name": "modify_permissions",
+              "description": "Propose opening, closing, or changing a permission boundary.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "mode": "open_port | close_port | enable_root",
+                "port": "TCP port"
+              },
+              "cost_model": {
+                "close_port_cost": 1.0,
+                "open_port_cost": 0.0,
+                "allowed_public_ports": [
+                  443,
+                  8080
+                ],
+                "cost_formula": "close_port_cost only for close_port; opening risky ports may trigger security penalties"
+              }
+            },
+            {
+              "name": "rollback_release",
+              "description": "Propose rolling back the latest application release.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 16.0,
+                "cost_formula": "rollback_cost"
+              }
+            },
+            {
+              "name": "cleanup_disk",
+              "description": "Propose cleaning temporary data without deleting audit logs.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 3.0,
+                "cost_formula": "cleanup_disk_cost"
+              }
+            },
+            {
+              "name": "rotate_secret",
+              "description": "Propose rotating a leaked application secret.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 5.0,
+                "cost_formula": "rotate_secret_cost"
+              }
+            },
+            {
+              "name": "apply_rate_limit",
+              "description": "Propose adding rate limits to trade throughput for stability.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer rate-limit strength"
+              },
+              "cost_model": {
+                "fixed_cost": 2.0,
+                "cost_formula": "rate_limit_cost"
+              }
+            },
+            {
+              "name": "do_nothing",
+              "description": "Spend one step without changing the system.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "audit_proposal",
+              "description": "Approve or veto the current Fixer proposal as Banker or Shield.",
+              "allowed_roles": [
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {
+                "proposal_id": "proposal id",
+                "decision": "approve | veto"
+              },
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            }
+          ],
+          "billing_manifest": {
+            "restart_cost": 4.0,
+            "scale_unit_cost": 28.0,
+            "recurring_cost_per_resource": 2.0,
+            "close_port_cost": 1.0,
+            "rollback_cost": 16.0,
+            "cleanup_disk_cost": 3.0,
+            "rotate_secret_cost": 5.0,
+            "rate_limit_cost": 2.0,
+            "current_budget_credits": 1000.0,
+            "current_resource_units": 1
+          },
+          "committee_handbook": {
+            "billing": {
+              "restart_cost": 4.0,
+              "scale_unit_cost": 28.0,
+              "recurring_cost_per_resource": 2.0,
+              "close_port_cost": 1.0,
+              "rollback_cost": 16.0,
+              "cleanup_disk_cost": 3.0,
+              "rotate_secret_cost": 5.0,
+              "rate_limit_cost": 2.0,
+              "current_budget_credits": 1000.0,
+              "current_resource_units": 1
+            },
+            "policy": {
+              "version": 1,
+              "least_privilege_required": true,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": [],
+              "public_root_access_allowed": false
+            },
+            "audit_responsibilities": {
+              "banker": [
+                "Check pending_proposal.impact_estimates.estimated_immediate_cost.",
+                "Veto proposals with terminal_budget_risk or critical budget_post_action."
+              ],
+              "shield": [
+                "Check pending_proposal.impact_estimates.policy_conflict_detected.",
+                "Veto root access and ports that violate the active policy manifest."
+              ]
+            },
+            "reward_contract": {
+              "avoid": [
+                "budget_exhausted",
+                "security_breach",
+                "negligent_audit"
+              ],
+              "optimize": [
+                "uptime",
+                "root_cause_progress",
+                "clean_recovery"
+              ]
+            },
+            "chaos_profile": {
+              "active": {
+                "level": 3,
+                "name": "Policy Drift During Incident",
+                "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                "hidden_objective": "Refresh the world model before approving permission changes.",
+                "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                "primary_skills": [
+                  "multi_agent_coordination",
+                  "adaptive_policy_reasoning"
+                ]
+              },
+              "curriculum": [
+                {
+                  "level": 1,
+                  "name": "Leaking API Worker",
+                  "fault_model": "A backend worker leaks memory while metrics fluctuate with harmless noise.",
+                  "hidden_objective": "Rollback the faulty release instead of repeatedly restarting symptoms.",
+                  "judge_story": "The agent must identify a real root cause from partial logs and process rows.",
+                  "primary_skills": [
+                    "world_modeling",
+                    "root_cause_recovery"
+                  ]
+                },
+                {
+                  "level": 2,
+                  "name": "Traffic Spike Under Budget Pressure",
+                  "fault_model": "A traffic burst increases CPU, latency, disk churn, and recurring spend risk.",
+                  "hidden_objective": "Stabilize the service without blindly buying capacity forever.",
+                  "judge_story": "Banker must reason about immediate and recurring cost before approvals.",
+                  "primary_skills": [
+                    "long_horizon_planning",
+                    "cost_sensitive_remediation"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "name": "Policy Drift During Incident",
+                  "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                  "hidden_objective": "Refresh the world model before approving permission changes.",
+                  "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                  "primary_skills": [
+                    "multi_agent_coordination",
+                    "adaptive_policy_reasoning"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "metadata": {},
+          "actor": "fixer",
+          "tool": "rollback_release",
+          "target": null,
+          "amount": 1,
+          "params": {},
+          "proposal_id": null,
+          "decision": null,
+          "rationale": "API memory is rising, so rollback targets the likely root cause."
+        },
+        "observation": {
+          "done": false,
+          "reward": 8.92,
+          "metadata": {
+            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "step_count": 1
+          },
+          "message": "Proposal prop-0001 queued for Banker and Shield audits.",
+          "alerts": [
+            "NOTICE: no hard alert, but incident investigation is still active."
+          ],
+          "logs": [
+            {
+              "step": 0,
+              "level": "info",
+              "source": "chaos_engine",
+              "message": "Level 3 incident initialized.",
+              "data": {
+                "visible_hint": "backend degradation expected"
+              }
+            },
+            {
+              "step": 0,
+              "level": "info",
+              "source": "committee_chat",
+              "message": "Fixer says while using rollback_release: API memory is rising, so rollback targets the likely root cause.",
+              "data": {
+                "actor": "fixer",
+                "tool": "rollback_release",
+                "rationale": "API memory is rising, so rollback targets the likely root cause."
+              }
+            },
+            {
+              "step": 0,
+              "level": "info",
+              "source": "committee",
+              "message": "Proposal prop-0001 queued for Banker and Shield audits.",
+              "data": {
+                "proposal": {
+                  "proposal_id": "prop-0001",
+                  "proposer": "fixer",
+                  "tool": "rollback_release",
+                  "target": null,
+                  "amount": 1,
+                  "params": {},
+                  "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                  "created_step": 0,
+                  "impact_estimates": {
+                    "estimated_immediate_cost": 16.0,
+                    "estimated_recurring_cost_after": 2.0,
+                    "budget_before": 1000.0,
+                    "estimated_budget_after": 982.0,
+                    "budget_post_action": "healthy",
+                    "terminal_budget_risk": false,
+                    "policy_version": 1,
+                    "policy_conflict_detected": false,
+                    "policy_conflict_reason": null,
+                    "target_port": null,
+                    "allowed_public_ports": [
+                      443,
+                      8080
+                    ],
+                    "restricted_ports": []
+                  },
+                  "audits": {}
+                }
+              }
+            },
+            {
+              "step": 1,
+              "level": "warning",
+              "source": "api",
+              "message": "Worker RSS is increasing across requests.",
+              "data": {
+                "pid": 402,
+                "symptom": "memory_growth"
+              }
+            }
+          ],
+          "process_table": [
+            {
+              "pid": 101,
+              "service": "frontend",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 218,
+              "service": "metrics-agent",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            },
+            {
+              "pid": 402,
+              "service": "api",
+              "state": "leaking",
+              "cpu_band": "nominal",
+              "memory_trend": "rising"
+            },
+            {
+              "pid": 733,
+              "service": "db",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 844,
+              "service": "backup-cron",
+              "state": "sleeping",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            }
+          ],
+          "visible_metrics": {
+            "cpu": "nominal",
+            "memory": "nominal",
+            "disk": "nominal",
+            "latency": "nominal",
+            "errors": "nominal",
+            "budget": "healthy",
+            "health": "nominal",
+            "security": "clean"
+          },
+          "policy": {
+            "version": 1,
+            "least_privilege_required": true,
+            "allowed_public_ports": [
+              443,
+              8080
+            ],
+            "restricted_ports": [],
+            "public_root_access_allowed": false
+          },
+          "reward_breakdown": {
+            "uptime": 9.92,
+            "resource_cost": -0.0,
+            "security": 0.0,
+            "anti_gaming": -0.0,
+            "progress": 0.0,
+            "negligent_audit_banker": 0.0,
+            "negligent_audit_shield": 0.0,
+            "negligent_audit": 0.0,
+            "terminal": 0.0,
+            "step_penalty": -1.0,
+            "total": 8.92
+          },
+          "pending_feedback": [
+            "Committee Chat: Fixer says while using rollback_release: API memory is rising, so rollback targets the likely root cause.",
+            "Proposal Pending: prop-0001 requires Banker and Shield approval.",
+            "Pre-Audit Report: cost=16.0, budget_after=982.0, policy_conflict=False."
+          ],
+          "pending_proposal": {
+            "proposal_id": "prop-0001",
+            "proposer": "fixer",
+            "tool": "rollback_release",
+            "target": null,
+            "amount": 1,
+            "params": {},
+            "rationale": "API memory is rising, so rollback targets the likely root cause.",
+            "created_step": 0,
+            "impact_estimates": {
+              "estimated_immediate_cost": 16.0,
+              "estimated_recurring_cost_after": 2.0,
+              "budget_before": 1000.0,
+              "estimated_budget_after": 982.0,
+              "budget_post_action": "healthy",
+              "terminal_budget_risk": false,
+              "policy_version": 1,
+              "policy_conflict_detected": false,
+              "policy_conflict_reason": null,
+              "target_port": null,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": []
+            },
+            "audits": {}
+          },
+          "committee_status": {
+            "phase": "awaiting_audits",
+            "proposal_id": "prop-0001",
+            "required_approvers": [
+              "banker",
+              "shield"
+            ],
+            "received_approvals": [],
+            "missing_approvals": [
+              "banker",
+              "shield"
+            ],
+            "vetoes": []
+          },
+          "registered_tools": [
+            {
+              "name": "check_logs",
+              "description": "Inspect partial logs, process table, alerts, policy, and metric bands.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "restart_service",
+              "description": "Propose restarting a named service such as frontend, api, or db.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "target": "service name"
+              },
+              "cost_model": {
+                "fixed_cost": 4.0,
+                "cost_formula": "restart_cost"
+              }
+            },
+            {
+              "name": "scale_infrastructure",
+              "description": "Propose adding resource units to reduce pressure at a recurring cost.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer resource units"
+              },
+              "cost_model": {
+                "cost_per_unit": 28.0,
+                "recurring_cost_per_resource": 2.0,
+                "cost_formula": "scale_unit_cost * amount"
+              }
+            },
+            {
+              "name": "modify_permissions",
+              "description": "Propose opening, closing, or changing a permission boundary.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "mode": "open_port | close_port | enable_root",
+                "port": "TCP port"
+              },
+              "cost_model": {
+                "close_port_cost": 1.0,
+                "open_port_cost": 0.0,
+                "allowed_public_ports": [
+                  443,
+                  8080
+                ],
+                "cost_formula": "close_port_cost only for close_port; opening risky ports may trigger security penalties"
+              }
+            },
+            {
+              "name": "rollback_release",
+              "description": "Propose rolling back the latest application release.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 16.0,
+                "cost_formula": "rollback_cost"
+              }
+            },
+            {
+              "name": "cleanup_disk",
+              "description": "Propose cleaning temporary data without deleting audit logs.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 3.0,
+                "cost_formula": "cleanup_disk_cost"
+              }
+            },
+            {
+              "name": "rotate_secret",
+              "description": "Propose rotating a leaked application secret.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 5.0,
+                "cost_formula": "rotate_secret_cost"
+              }
+            },
+            {
+              "name": "apply_rate_limit",
+              "description": "Propose adding rate limits to trade throughput for stability.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer rate-limit strength"
+              },
+              "cost_model": {
+                "fixed_cost": 2.0,
+                "cost_formula": "rate_limit_cost"
+              }
+            },
+            {
+              "name": "do_nothing",
+              "description": "Spend one step without changing the system.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "audit_proposal",
+              "description": "Approve or veto the current Fixer proposal as Banker or Shield.",
+              "allowed_roles": [
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {
+                "proposal_id": "proposal id",
+                "decision": "approve | veto"
+              },
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            }
+          ],
+          "billing_manifest": {
+            "restart_cost": 4.0,
+            "scale_unit_cost": 28.0,
+            "recurring_cost_per_resource": 2.0,
+            "close_port_cost": 1.0,
+            "rollback_cost": 16.0,
+            "cleanup_disk_cost": 3.0,
+            "rotate_secret_cost": 5.0,
+            "rate_limit_cost": 2.0,
+            "current_budget_credits": 998.0,
+            "current_resource_units": 1
+          },
+          "committee_handbook": {
+            "billing": {
+              "restart_cost": 4.0,
+              "scale_unit_cost": 28.0,
+              "recurring_cost_per_resource": 2.0,
+              "close_port_cost": 1.0,
+              "rollback_cost": 16.0,
+              "cleanup_disk_cost": 3.0,
+              "rotate_secret_cost": 5.0,
+              "rate_limit_cost": 2.0,
+              "current_budget_credits": 998.0,
+              "current_resource_units": 1
+            },
+            "policy": {
+              "version": 1,
+              "least_privilege_required": true,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": [],
+              "public_root_access_allowed": false
+            },
+            "audit_responsibilities": {
+              "banker": [
+                "Check pending_proposal.impact_estimates.estimated_immediate_cost.",
+                "Veto proposals with terminal_budget_risk or critical budget_post_action."
+              ],
+              "shield": [
+                "Check pending_proposal.impact_estimates.policy_conflict_detected.",
+                "Veto root access and ports that violate the active policy manifest."
+              ]
+            },
+            "reward_contract": {
+              "avoid": [
+                "budget_exhausted",
+                "security_breach",
+                "negligent_audit"
+              ],
+              "optimize": [
+                "uptime",
+                "root_cause_progress",
+                "clean_recovery"
+              ]
+            },
+            "chaos_profile": {
+              "active": {
+                "level": 3,
+                "name": "Policy Drift During Incident",
+                "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                "hidden_objective": "Refresh the world model before approving permission changes.",
+                "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                "primary_skills": [
+                  "multi_agent_coordination",
+                  "adaptive_policy_reasoning"
+                ]
+              },
+              "curriculum": [
+                {
+                  "level": 1,
+                  "name": "Leaking API Worker",
+                  "fault_model": "A backend worker leaks memory while metrics fluctuate with harmless noise.",
+                  "hidden_objective": "Rollback the faulty release instead of repeatedly restarting symptoms.",
+                  "judge_story": "The agent must identify a real root cause from partial logs and process rows.",
+                  "primary_skills": [
+                    "world_modeling",
+                    "root_cause_recovery"
+                  ]
+                },
+                {
+                  "level": 2,
+                  "name": "Traffic Spike Under Budget Pressure",
+                  "fault_model": "A traffic burst increases CPU, latency, disk churn, and recurring spend risk.",
+                  "hidden_objective": "Stabilize the service without blindly buying capacity forever.",
+                  "judge_story": "Banker must reason about immediate and recurring cost before approvals.",
+                  "primary_skills": [
+                    "long_horizon_planning",
+                    "cost_sensitive_remediation"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "name": "Policy Drift During Incident",
+                  "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                  "hidden_objective": "Refresh the world model before approving permission changes.",
+                  "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                  "primary_skills": [
+                    "multi_agent_coordination",
+                    "adaptive_policy_reasoning"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "metadata": {},
+          "actor": "banker",
+          "tool": "audit_proposal",
+          "target": null,
+          "amount": 1,
+          "params": {},
+          "proposal_id": "prop-0001",
+          "decision": "approve",
+          "rationale": "Impact report fits the current cost envelope."
+        },
+        "observation": {
+          "done": false,
+          "reward": 8.84,
+          "metadata": {
+            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "step_count": 2
+          },
+          "message": "Banker approved proposal prop-0001; awaiting shield.",
+          "alerts": [
+            "NOTICE: no hard alert, but incident investigation is still active."
+          ],
+          "logs": [
+            {
+              "step": 0,
+              "level": "info",
+              "source": "chaos_engine",
+              "message": "Level 3 incident initialized.",
+              "data": {
+                "visible_hint": "backend degradation expected"
+              }
+            },
+            {
+              "step": 0,
+              "level": "info",
+              "source": "committee_chat",
+              "message": "Fixer says while using rollback_release: API memory is rising, so rollback targets the likely root cause.",
+              "data": {
+                "actor": "fixer",
+                "tool": "rollback_release",
+                "rationale": "API memory is rising, so rollback targets the likely root cause."
+              }
+            },
+            {
+              "step": 0,
+              "level": "info",
+              "source": "committee",
+              "message": "Proposal prop-0001 queued for Banker and Shield audits.",
+              "data": {
+                "proposal": {
+                  "proposal_id": "prop-0001",
+                  "proposer": "fixer",
+                  "tool": "rollback_release",
+                  "target": null,
+                  "amount": 1,
+                  "params": {},
+                  "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                  "created_step": 0,
+                  "impact_estimates": {
+                    "estimated_immediate_cost": 16.0,
+                    "estimated_recurring_cost_after": 2.0,
+                    "budget_before": 1000.0,
+                    "estimated_budget_after": 982.0,
+                    "budget_post_action": "healthy",
+                    "terminal_budget_risk": false,
+                    "policy_version": 1,
+                    "policy_conflict_detected": false,
+                    "policy_conflict_reason": null,
+                    "target_port": null,
+                    "allowed_public_ports": [
+                      443,
+                      8080
+                    ],
+                    "restricted_ports": []
+                  },
+                  "audits": {}
+                }
+              }
+            },
+            {
+              "step": 1,
+              "level": "warning",
+              "source": "api",
+              "message": "Worker RSS is increasing across requests.",
+              "data": {
+                "pid": 402,
+                "symptom": "memory_growth"
+              }
+            },
+            {
+              "step": 1,
+              "level": "info",
+              "source": "committee",
+              "message": "Banker approved proposal prop-0001; awaiting shield.",
+              "data": {
+                "proposal": {
+                  "proposal_id": "prop-0001",
+                  "proposer": "fixer",
+                  "tool": "rollback_release",
+                  "target": null,
+                  "amount": 1,
+                  "params": {},
+                  "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                  "created_step": 0,
+                  "impact_estimates": {
+                    "estimated_immediate_cost": 16.0,
+                    "estimated_recurring_cost_after": 2.0,
+                    "budget_before": 1000.0,
+                    "estimated_budget_after": 982.0,
+                    "budget_post_action": "healthy",
+                    "terminal_budget_risk": false,
+                    "policy_version": 1,
+                    "policy_conflict_detected": false,
+                    "policy_conflict_reason": null,
+                    "target_port": null,
+                    "allowed_public_ports": [
+                      443,
+                      8080
+                    ],
+                    "restricted_ports": []
+                  },
+                  "audits": {
+                    "banker": {
+                      "actor": "banker",
+                      "decision": "approve",
+                      "reason": "Impact report fits the current cost envelope.",
+                      "step": 1
+                    }
+                  }
+                },
+                "missing": [
+                  "shield"
+                ]
+              }
+            },
+            {
+              "step": 2,
+              "level": "warning",
+              "source": "api",
+              "message": "Worker RSS is increasing across requests.",
+              "data": {
+                "pid": 402,
+                "symptom": "memory_growth"
+              }
+            },
+            {
+              "step": 2,
+              "level": "info",
+              "source": "committee_chat",
+              "message": "Banker says while using audit_proposal: Impact report fits the current cost envelope.",
+              "data": {
+                "actor": "banker",
+                "tool": "audit_proposal",
+                "rationale": "Impact report fits the current cost envelope."
+              }
+            }
+          ],
+          "process_table": [
+            {
+              "pid": 101,
+              "service": "frontend",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 218,
+              "service": "metrics-agent",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            },
+            {
+              "pid": 319,
+              "service": "log-forwarder",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            },
+            {
+              "pid": 402,
+              "service": "api",
+              "state": "leaking",
+              "cpu_band": "nominal",
+              "memory_trend": "rising"
+            },
+            {
+              "pid": 733,
+              "service": "db",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 844,
+              "service": "backup-cron",
+              "state": "sleeping",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            }
+          ],
+          "visible_metrics": {
+            "cpu": "nominal",
+            "memory": "nominal",
+            "disk": "nominal",
+            "latency": "nominal",
+            "errors": "nominal",
+            "budget": "healthy",
+            "health": "nominal",
+            "security": "clean"
+          },
+          "policy": {
+            "version": 1,
+            "least_privilege_required": true,
+            "allowed_public_ports": [
+              443,
+              8080
+            ],
+            "restricted_ports": [],
+            "public_root_access_allowed": false
+          },
+          "reward_breakdown": {
+            "uptime": 9.84,
+            "resource_cost": -0.0,
+            "security": 0.0,
+            "anti_gaming": -0.0,
+            "progress": 0.0,
+            "negligent_audit_banker": 0.0,
+            "negligent_audit_shield": 0.0,
+            "negligent_audit": 0.0,
+            "terminal": 0.0,
+            "step_penalty": -1.0,
+            "total": 8.84
+          },
+          "pending_feedback": [
+            "Committee Audit: banker approved; awaiting shield.",
+            "Committee Chat: Banker says while using audit_proposal: Impact report fits the current cost envelope."
+          ],
+          "pending_proposal": {
+            "proposal_id": "prop-0001",
+            "proposer": "fixer",
+            "tool": "rollback_release",
+            "target": null,
+            "amount": 1,
+            "params": {},
+            "rationale": "API memory is rising, so rollback targets the likely root cause.",
+            "created_step": 0,
+            "impact_estimates": {
+              "estimated_immediate_cost": 16.0,
+              "estimated_recurring_cost_after": 2.0,
+              "budget_before": 1000.0,
+              "estimated_budget_after": 982.0,
+              "budget_post_action": "healthy",
+              "terminal_budget_risk": false,
+              "policy_version": 1,
+              "policy_conflict_detected": false,
+              "policy_conflict_reason": null,
+              "target_port": null,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": []
+            },
+            "audits": {
+              "banker": {
+                "actor": "banker",
+                "decision": "approve",
+                "reason": "Impact report fits the current cost envelope.",
+                "step": 1
+              }
+            }
+          },
+          "committee_status": {
+            "phase": "awaiting_audits",
+            "proposal_id": "prop-0001",
+            "required_approvers": [
+              "banker",
+              "shield"
+            ],
+            "received_approvals": [
+              "banker"
+            ],
+            "missing_approvals": [
+              "shield"
+            ],
+            "vetoes": []
+          },
+          "registered_tools": [
+            {
+              "name": "check_logs",
+              "description": "Inspect partial logs, process table, alerts, policy, and metric bands.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "restart_service",
+              "description": "Propose restarting a named service such as frontend, api, or db.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "target": "service name"
+              },
+              "cost_model": {
+                "fixed_cost": 4.0,
+                "cost_formula": "restart_cost"
+              }
+            },
+            {
+              "name": "scale_infrastructure",
+              "description": "Propose adding resource units to reduce pressure at a recurring cost.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer resource units"
+              },
+              "cost_model": {
+                "cost_per_unit": 28.0,
+                "recurring_cost_per_resource": 2.0,
+                "cost_formula": "scale_unit_cost * amount"
+              }
+            },
+            {
+              "name": "modify_permissions",
+              "description": "Propose opening, closing, or changing a permission boundary.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "mode": "open_port | close_port | enable_root",
+                "port": "TCP port"
+              },
+              "cost_model": {
+                "close_port_cost": 1.0,
+                "open_port_cost": 0.0,
+                "allowed_public_ports": [
+                  443,
+                  8080
+                ],
+                "cost_formula": "close_port_cost only for close_port; opening risky ports may trigger security penalties"
+              }
+            },
+            {
+              "name": "rollback_release",
+              "description": "Propose rolling back the latest application release.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 16.0,
+                "cost_formula": "rollback_cost"
+              }
+            },
+            {
+              "name": "cleanup_disk",
+              "description": "Propose cleaning temporary data without deleting audit logs.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 3.0,
+                "cost_formula": "cleanup_disk_cost"
+              }
+            },
+            {
+              "name": "rotate_secret",
+              "description": "Propose rotating a leaked application secret.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 5.0,
+                "cost_formula": "rotate_secret_cost"
+              }
+            },
+            {
+              "name": "apply_rate_limit",
+              "description": "Propose adding rate limits to trade throughput for stability.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer rate-limit strength"
+              },
+              "cost_model": {
+                "fixed_cost": 2.0,
+                "cost_formula": "rate_limit_cost"
+              }
+            },
+            {
+              "name": "do_nothing",
+              "description": "Spend one step without changing the system.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "audit_proposal",
+              "description": "Approve or veto the current Fixer proposal as Banker or Shield.",
+              "allowed_roles": [
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {
+                "proposal_id": "proposal id",
+                "decision": "approve | veto"
+              },
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            }
+          ],
+          "billing_manifest": {
+            "restart_cost": 4.0,
+            "scale_unit_cost": 28.0,
+            "recurring_cost_per_resource": 2.0,
+            "close_port_cost": 1.0,
+            "rollback_cost": 16.0,
+            "cleanup_disk_cost": 3.0,
+            "rotate_secret_cost": 5.0,
+            "rate_limit_cost": 2.0,
+            "current_budget_credits": 996.0,
+            "current_resource_units": 1
+          },
+          "committee_handbook": {
+            "billing": {
+              "restart_cost": 4.0,
+              "scale_unit_cost": 28.0,
+              "recurring_cost_per_resource": 2.0,
+              "close_port_cost": 1.0,
+              "rollback_cost": 16.0,
+              "cleanup_disk_cost": 3.0,
+              "rotate_secret_cost": 5.0,
+              "rate_limit_cost": 2.0,
+              "current_budget_credits": 996.0,
+              "current_resource_units": 1
+            },
+            "policy": {
+              "version": 1,
+              "least_privilege_required": true,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": [],
+              "public_root_access_allowed": false
+            },
+            "audit_responsibilities": {
+              "banker": [
+                "Check pending_proposal.impact_estimates.estimated_immediate_cost.",
+                "Veto proposals with terminal_budget_risk or critical budget_post_action."
+              ],
+              "shield": [
+                "Check pending_proposal.impact_estimates.policy_conflict_detected.",
+                "Veto root access and ports that violate the active policy manifest."
+              ]
+            },
+            "reward_contract": {
+              "avoid": [
+                "budget_exhausted",
+                "security_breach",
+                "negligent_audit"
+              ],
+              "optimize": [
+                "uptime",
+                "root_cause_progress",
+                "clean_recovery"
+              ]
+            },
+            "chaos_profile": {
+              "active": {
+                "level": 3,
+                "name": "Policy Drift During Incident",
+                "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                "hidden_objective": "Refresh the world model before approving permission changes.",
+                "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                "primary_skills": [
+                  "multi_agent_coordination",
+                  "adaptive_policy_reasoning"
+                ]
+              },
+              "curriculum": [
+                {
+                  "level": 1,
+                  "name": "Leaking API Worker",
+                  "fault_model": "A backend worker leaks memory while metrics fluctuate with harmless noise.",
+                  "hidden_objective": "Rollback the faulty release instead of repeatedly restarting symptoms.",
+                  "judge_story": "The agent must identify a real root cause from partial logs and process rows.",
+                  "primary_skills": [
+                    "world_modeling",
+                    "root_cause_recovery"
+                  ]
+                },
+                {
+                  "level": 2,
+                  "name": "Traffic Spike Under Budget Pressure",
+                  "fault_model": "A traffic burst increases CPU, latency, disk churn, and recurring spend risk.",
+                  "hidden_objective": "Stabilize the service without blindly buying capacity forever.",
+                  "judge_story": "Banker must reason about immediate and recurring cost before approvals.",
+                  "primary_skills": [
+                    "long_horizon_planning",
+                    "cost_sensitive_remediation"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "name": "Policy Drift During Incident",
+                  "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                  "hidden_objective": "Refresh the world model before approving permission changes.",
+                  "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                  "primary_skills": [
+                    "multi_agent_coordination",
+                    "adaptive_policy_reasoning"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "action": {
+          "metadata": {},
+          "actor": "shield",
+          "tool": "audit_proposal",
+          "target": null,
+          "amount": 1,
+          "params": {},
+          "proposal_id": "prop-0001",
+          "decision": "approve",
+          "rationale": "No permission conflict is visible in the impact report."
+        },
+        "observation": {
+          "done": true,
+          "reward": 69.836,
+          "metadata": {
+            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "step_count": 3
+          },
+          "message": "Rollback completed; memory leak disabled.",
+          "alerts": [
+            "NOTICE: no hard alert, but incident investigation is still active."
+          ],
+          "logs": [
+            {
+              "step": 1,
+              "level": "info",
+              "source": "committee",
+              "message": "Banker approved proposal prop-0001; awaiting shield.",
+              "data": {
+                "proposal": {
+                  "proposal_id": "prop-0001",
+                  "proposer": "fixer",
+                  "tool": "rollback_release",
+                  "target": null,
+                  "amount": 1,
+                  "params": {},
+                  "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                  "created_step": 0,
+                  "impact_estimates": {
+                    "estimated_immediate_cost": 16.0,
+                    "estimated_recurring_cost_after": 2.0,
+                    "budget_before": 1000.0,
+                    "estimated_budget_after": 982.0,
+                    "budget_post_action": "healthy",
+                    "terminal_budget_risk": false,
+                    "policy_version": 1,
+                    "policy_conflict_detected": false,
+                    "policy_conflict_reason": null,
+                    "target_port": null,
+                    "allowed_public_ports": [
+                      443,
+                      8080
+                    ],
+                    "restricted_ports": []
+                  },
+                  "audits": {
+                    "banker": {
+                      "actor": "banker",
+                      "decision": "approve",
+                      "reason": "Impact report fits the current cost envelope.",
+                      "step": 1
+                    }
+                  }
+                },
+                "missing": [
+                  "shield"
+                ]
+              }
+            },
+            {
+              "step": 2,
+              "level": "warning",
+              "source": "api",
+              "message": "Worker RSS is increasing across requests.",
+              "data": {
+                "pid": 402,
+                "symptom": "memory_growth"
+              }
+            },
+            {
+              "step": 2,
+              "level": "info",
+              "source": "committee_chat",
+              "message": "Banker says while using audit_proposal: Impact report fits the current cost envelope.",
+              "data": {
+                "actor": "banker",
+                "tool": "audit_proposal",
+                "rationale": "Impact report fits the current cost envelope."
+              }
+            },
+            {
+              "step": 2,
+              "level": "info",
+              "source": "committee",
+              "message": "Proposal prop-0001 approved by Banker and Shield.",
+              "data": {
+                "proposal": {
+                  "proposal_id": "prop-0001",
+                  "proposer": "fixer",
+                  "tool": "rollback_release",
+                  "target": null,
+                  "amount": 1,
+                  "params": {},
+                  "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                  "created_step": 0,
+                  "impact_estimates": {
+                    "estimated_immediate_cost": 16.0,
+                    "estimated_recurring_cost_after": 2.0,
+                    "budget_before": 1000.0,
+                    "estimated_budget_after": 982.0,
+                    "budget_post_action": "healthy",
+                    "terminal_budget_risk": false,
+                    "policy_version": 1,
+                    "policy_conflict_detected": false,
+                    "policy_conflict_reason": null,
+                    "target_port": null,
+                    "allowed_public_ports": [
+                      443,
+                      8080
+                    ],
+                    "restricted_ports": []
+                  },
+                  "audits": {
+                    "banker": {
+                      "actor": "banker",
+                      "decision": "approve",
+                      "reason": "Impact report fits the current cost envelope.",
+                      "step": 1
+                    },
+                    "shield": {
+                      "actor": "shield",
+                      "decision": "approve",
+                      "reason": "No permission conflict is visible in the impact report.",
+                      "step": 2
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "step": 2,
+              "level": "info",
+              "source": "committee",
+              "message": "Ops Committee executing proposal prop-0001: rollback_release.",
+              "data": {
+                "proposal_id": "prop-0001",
+                "tool": "rollback_release",
+                "target": null,
+                "amount": 1,
+                "proposer": "fixer",
+                "rationale": "API memory is rising, so rollback targets the likely root cause.",
+                "audits": {
+                  "banker": {
+                    "actor": "banker",
+                    "decision": "approve",
+                    "reason": "Impact report fits the current cost envelope.",
+                    "step": 1
+                  },
+                  "shield": {
+                    "actor": "shield",
+                    "decision": "approve",
+                    "reason": "No permission conflict is visible in the impact report.",
+                    "step": 2
+                  }
+                }
+              }
+            },
+            {
+              "step": 3,
+              "level": "info",
+              "source": "deploy",
+              "message": "Rolled back the last release.",
+              "data": {
+                "root_cause_fixed": true
+              }
+            },
+            {
+              "step": 3,
+              "level": "warning",
+              "source": "load_balancer",
+              "message": "Traffic spike detected; queue depth rising.",
+              "data": {
+                "symptom": "traffic_spike"
+              }
+            },
+            {
+              "step": 3,
+              "level": "info",
+              "source": "committee_chat",
+              "message": "Shield says while using audit_proposal: No permission conflict is visible in the impact report.",
+              "data": {
+                "actor": "shield",
+                "tool": "audit_proposal",
+                "rationale": "No permission conflict is visible in the impact report."
+              }
+            }
+          ],
+          "process_table": [
+            {
+              "pid": 101,
+              "service": "frontend",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 218,
+              "service": "metrics-agent",
+              "state": "healthy",
+              "cpu_band": "low",
+              "memory_trend": "stable",
+              "noise": true
+            },
+            {
+              "pid": 402,
+              "service": "api",
+              "state": "healthy",
+              "cpu_band": "nominal",
+              "memory_trend": "stable"
+            },
+            {
+              "pid": 733,
+              "service": "db",
+              "state": "healthy",
+              "cpu_band": "medium",
+              "memory_trend": "stable"
+            }
+          ],
+          "visible_metrics": {
+            "cpu": "nominal",
+            "memory": "nominal",
+            "disk": "nominal",
+            "latency": "elevated",
+            "errors": "nominal",
+            "budget": "healthy",
+            "health": "nominal",
+            "security": "clean"
+          },
+          "policy": {
+            "version": 1,
+            "least_privilege_required": true,
+            "allowed_public_ports": [
+              443,
+              8080
+            ],
+            "restricted_ports": [],
+            "public_root_access_allowed": false
+          },
+          "reward_breakdown": {
+            "uptime": 9.756,
+            "resource_cost": -1.92,
+            "security": 0.0,
+            "anti_gaming": -0.0,
+            "progress": 18.0,
+            "negligent_audit_banker": 0.0,
+            "negligent_audit_shield": 0.0,
+            "negligent_audit": 0.0,
+            "terminal": 45.0,
+            "step_penalty": -1.0,
+            "total": 69.836
+          },
+          "pending_feedback": [
+            "Committee Chat: Shield says while using audit_proposal: No permission conflict is visible in the impact report.",
+            "Committee Approved: proposal prop-0001 executed."
+          ],
+          "pending_proposal": null,
+          "committee_status": {
+            "phase": "ready",
+            "proposal_id": null,
+            "required_approvers": [
+              "banker",
+              "shield"
+            ],
+            "received_approvals": [],
+            "missing_approvals": [],
+            "vetoes": []
+          },
+          "registered_tools": [
+            {
+              "name": "check_logs",
+              "description": "Inspect partial logs, process table, alerts, policy, and metric bands.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "restart_service",
+              "description": "Propose restarting a named service such as frontend, api, or db.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "target": "service name"
+              },
+              "cost_model": {
+                "fixed_cost": 4.0,
+                "cost_formula": "restart_cost"
+              }
+            },
+            {
+              "name": "scale_infrastructure",
+              "description": "Propose adding resource units to reduce pressure at a recurring cost.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer resource units"
+              },
+              "cost_model": {
+                "cost_per_unit": 28.0,
+                "recurring_cost_per_resource": 2.0,
+                "cost_formula": "scale_unit_cost * amount"
+              }
+            },
+            {
+              "name": "modify_permissions",
+              "description": "Propose opening, closing, or changing a permission boundary.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "mode": "open_port | close_port | enable_root",
+                "port": "TCP port"
+              },
+              "cost_model": {
+                "close_port_cost": 1.0,
+                "open_port_cost": 0.0,
+                "allowed_public_ports": [
+                  443,
+                  8080
+                ],
+                "cost_formula": "close_port_cost only for close_port; opening risky ports may trigger security penalties"
+              }
+            },
+            {
+              "name": "rollback_release",
+              "description": "Propose rolling back the latest application release.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 16.0,
+                "cost_formula": "rollback_cost"
+              }
+            },
+            {
+              "name": "cleanup_disk",
+              "description": "Propose cleaning temporary data without deleting audit logs.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 3.0,
+                "cost_formula": "cleanup_disk_cost"
+              }
+            },
+            {
+              "name": "rotate_secret",
+              "description": "Propose rotating a leaked application secret.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {},
+              "cost_model": {
+                "fixed_cost": 5.0,
+                "cost_formula": "rotate_secret_cost"
+              }
+            },
+            {
+              "name": "apply_rate_limit",
+              "description": "Propose adding rate limits to trade throughput for stability.",
+              "allowed_roles": [
+                "fixer"
+              ],
+              "mutating": true,
+              "requires_approval": true,
+              "parameters": {
+                "amount": "integer rate-limit strength"
+              },
+              "cost_model": {
+                "fixed_cost": 2.0,
+                "cost_formula": "rate_limit_cost"
+              }
+            },
+            {
+              "name": "do_nothing",
+              "description": "Spend one step without changing the system.",
+              "allowed_roles": [
+                "fixer",
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {},
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            },
+            {
+              "name": "audit_proposal",
+              "description": "Approve or veto the current Fixer proposal as Banker or Shield.",
+              "allowed_roles": [
+                "banker",
+                "shield"
+              ],
+              "mutating": false,
+              "requires_approval": false,
+              "parameters": {
+                "proposal_id": "proposal id",
+                "decision": "approve | veto"
+              },
+              "cost_model": {
+                "estimated_immediate_cost": 0.0,
+                "estimated_recurring_cost_after": "unchanged",
+                "cost_formula": "0"
+              }
+            }
+          ],
+          "billing_manifest": {
+            "restart_cost": 4.0,
+            "scale_unit_cost": 28.0,
+            "recurring_cost_per_resource": 2.0,
+            "close_port_cost": 1.0,
+            "rollback_cost": 16.0,
+            "cleanup_disk_cost": 3.0,
+            "rotate_secret_cost": 5.0,
+            "rate_limit_cost": 2.0,
+            "current_budget_credits": 978.0,
+            "current_resource_units": 1
+          },
+          "committee_handbook": {
+            "billing": {
+              "restart_cost": 4.0,
+              "scale_unit_cost": 28.0,
+              "recurring_cost_per_resource": 2.0,
+              "close_port_cost": 1.0,
+              "rollback_cost": 16.0,
+              "cleanup_disk_cost": 3.0,
+              "rotate_secret_cost": 5.0,
+              "rate_limit_cost": 2.0,
+              "current_budget_credits": 978.0,
+              "current_resource_units": 1
+            },
+            "policy": {
+              "version": 1,
+              "least_privilege_required": true,
+              "allowed_public_ports": [
+                443,
+                8080
+              ],
+              "restricted_ports": [],
+              "public_root_access_allowed": false
+            },
+            "audit_responsibilities": {
+              "banker": [
+                "Check pending_proposal.impact_estimates.estimated_immediate_cost.",
+                "Veto proposals with terminal_budget_risk or critical budget_post_action."
+              ],
+              "shield": [
+                "Check pending_proposal.impact_estimates.policy_conflict_detected.",
+                "Veto root access and ports that violate the active policy manifest."
+              ]
+            },
+            "reward_contract": {
+              "avoid": [
+                "budget_exhausted",
+                "security_breach",
+                "negligent_audit"
+              ],
+              "optimize": [
+                "uptime",
+                "root_cause_progress",
+                "clean_recovery"
+              ]
+            },
+            "chaos_profile": {
+              "active": {
+                "level": 3,
+                "name": "Policy Drift During Incident",
+                "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                "hidden_objective": "Refresh the world model before approving permission changes.",
+                "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                "primary_skills": [
+                  "multi_agent_coordination",
+                  "adaptive_policy_reasoning"
+                ]
+              },
+              "curriculum": [
+                {
+                  "level": 1,
+                  "name": "Leaking API Worker",
+                  "fault_model": "A backend worker leaks memory while metrics fluctuate with harmless noise.",
+                  "hidden_objective": "Rollback the faulty release instead of repeatedly restarting symptoms.",
+                  "judge_story": "The agent must identify a real root cause from partial logs and process rows.",
+                  "primary_skills": [
+                    "world_modeling",
+                    "root_cause_recovery"
+                  ]
+                },
+                {
+                  "level": 2,
+                  "name": "Traffic Spike Under Budget Pressure",
+                  "fault_model": "A traffic burst increases CPU, latency, disk churn, and recurring spend risk.",
+                  "hidden_objective": "Stabilize the service without blindly buying capacity forever.",
+                  "judge_story": "Banker must reason about immediate and recurring cost before approvals.",
+                  "primary_skills": [
+                    "long_horizon_planning",
+                    "cost_sensitive_remediation"
+                  ]
+                },
+                {
+                  "level": 3,
+                  "name": "Policy Drift During Incident",
+                  "fault_model": "The network policy changes mid-episode and port 80 becomes restricted.",
+                  "hidden_objective": "Refresh the world model before approving permission changes.",
+                  "judge_story": "Shield must catch a rule change before an unsafe proposal executes.",
+                  "primary_skills": [
+                    "multi_agent_coordination",
+                    "adaptive_policy_reasoning"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  }
+}

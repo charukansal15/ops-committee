@@ -1,0 +1,21 @@
+[project]
+name = "ops-committee-env"
+version = "0.1.0"
+description = "OpenEnv environment for multi-agent DevOps, SecOps, and FinOps incident response."
+requires-python = ">=3.11"
+dependencies = [
+    "openenv @ git+https://github.com/meta-pytorch/OpenEnv.git",
+    "pydantic>=2.7",
+    "fastapi>=0.110",
+    "uvicorn>=0.30",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+

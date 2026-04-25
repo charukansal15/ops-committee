@@ -1,0 +1,7 @@
+spec_version: 1
+name: ops_committee_env
+type: space
+runtime: fastapi
+app: ops_committee_env.server.app:app
+port: 8000
+
