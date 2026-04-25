@@ -172,7 +172,7 @@
           "done": false,
           "reward": 0.0,
           "metadata": {
-            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
             "step_count": 0
           },
           "message": "Environment reset. Incident channel is open.",
@@ -528,6 +528,55 @@
                 }
               ]
             }
+          },
+          "rubric": {
+            "type": "ops_committee_composable_rubric",
+            "entries": [
+              {
+                "name": "uptime",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "maximize service health while incident response continues"
+              },
+              {
+                "name": "resource_cost",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "discourage expensive or recurring-capacity shortcuts"
+              },
+              {
+                "name": "security",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "penalize unsafe permissions and open security flags"
+              },
+              {
+                "name": "root_cause_progress",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward fixing the hidden root cause rather than symptoms"
+              },
+              {
+                "name": "anti_gaming",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "penalize invalid actions, duplicate proposals, and do-nothing loops"
+              },
+              {
+                "name": "negligent_audit",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "assign responsibility for reckless approvals"
+              },
+              {
+                "name": "terminal",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward clean recovery and penalize terminal failures"
+              }
+            ],
+            "step_penalty": 0.0,
+            "total": 0.0
           }
         }
       },
@@ -547,7 +596,7 @@
           "done": false,
           "reward": 8.92,
           "metadata": {
-            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
             "step_count": 1
           },
           "message": "Proposal prop-0001 queued for Banker and Shield audits.",
@@ -1014,6 +1063,55 @@
                 }
               ]
             }
+          },
+          "rubric": {
+            "type": "ops_committee_composable_rubric",
+            "entries": [
+              {
+                "name": "uptime",
+                "score": 9.92,
+                "weight": 1.0,
+                "objective": "maximize service health while incident response continues"
+              },
+              {
+                "name": "resource_cost",
+                "score": -0.0,
+                "weight": 1.0,
+                "objective": "discourage expensive or recurring-capacity shortcuts"
+              },
+              {
+                "name": "security",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "penalize unsafe permissions and open security flags"
+              },
+              {
+                "name": "root_cause_progress",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward fixing the hidden root cause rather than symptoms"
+              },
+              {
+                "name": "anti_gaming",
+                "score": -0.0,
+                "weight": 1.0,
+                "objective": "penalize invalid actions, duplicate proposals, and do-nothing loops"
+              },
+              {
+                "name": "negligent_audit",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "assign responsibility for reckless approvals"
+              },
+              {
+                "name": "terminal",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward clean recovery and penalize terminal failures"
+              }
+            ],
+            "step_penalty": -1.0,
+            "total": 8.92
           }
         }
       },
@@ -1033,7 +1131,7 @@
           "done": false,
           "reward": 8.84,
           "metadata": {
-            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
             "step_count": 2
           },
           "message": "Banker approved proposal prop-0001; awaiting shield.",
@@ -1582,6 +1680,55 @@
                 }
               ]
             }
+          },
+          "rubric": {
+            "type": "ops_committee_composable_rubric",
+            "entries": [
+              {
+                "name": "uptime",
+                "score": 9.84,
+                "weight": 1.0,
+                "objective": "maximize service health while incident response continues"
+              },
+              {
+                "name": "resource_cost",
+                "score": -0.0,
+                "weight": 1.0,
+                "objective": "discourage expensive or recurring-capacity shortcuts"
+              },
+              {
+                "name": "security",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "penalize unsafe permissions and open security flags"
+              },
+              {
+                "name": "root_cause_progress",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward fixing the hidden root cause rather than symptoms"
+              },
+              {
+                "name": "anti_gaming",
+                "score": -0.0,
+                "weight": 1.0,
+                "objective": "penalize invalid actions, duplicate proposals, and do-nothing loops"
+              },
+              {
+                "name": "negligent_audit",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "assign responsibility for reckless approvals"
+              },
+              {
+                "name": "terminal",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "reward clean recovery and penalize terminal failures"
+              }
+            ],
+            "step_penalty": -1.0,
+            "total": 8.84
           }
         }
       },
@@ -1601,7 +1748,7 @@
           "done": true,
           "reward": 69.836,
           "metadata": {
-            "episode_id": "6fa413c3-bb78-475e-96a5-0a137d98f3fa",
+            "episode_id": "3426bce3-37db-4485-a9cb-e12a06a18814",
             "step_count": 3
           },
           "message": "Rollback completed; memory leak disabled.",
@@ -2136,6 +2283,55 @@
                 }
               ]
             }
+          },
+          "rubric": {
+            "type": "ops_committee_composable_rubric",
+            "entries": [
+              {
+                "name": "uptime",
+                "score": 9.756,
+                "weight": 1.0,
+                "objective": "maximize service health while incident response continues"
+              },
+              {
+                "name": "resource_cost",
+                "score": -1.92,
+                "weight": 1.0,
+                "objective": "discourage expensive or recurring-capacity shortcuts"
+              },
+              {
+                "name": "security",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "penalize unsafe permissions and open security flags"
+              },
+              {
+                "name": "root_cause_progress",
+                "score": 18.0,
+                "weight": 1.0,
+                "objective": "reward fixing the hidden root cause rather than symptoms"
+              },
+              {
+                "name": "anti_gaming",
+                "score": -0.0,
+                "weight": 1.0,
+                "objective": "penalize invalid actions, duplicate proposals, and do-nothing loops"
+              },
+              {
+                "name": "negligent_audit",
+                "score": 0.0,
+                "weight": 1.0,
+                "objective": "assign responsibility for reckless approvals"
+              },
+              {
+                "name": "terminal",
+                "score": 45.0,
+                "weight": 1.0,
+                "objective": "reward clean recovery and penalize terminal failures"
+              }
+            ],
+            "step_penalty": -1.0,
+            "total": 69.836
           }
         }
       }

@@ -377,6 +377,7 @@ class SystemState:
             "committee_status": self.committee_status(),
             "billing_manifest": self.billing_manifest(),
             "committee_handbook": self.committee_handbook(),
+            "rubric": self.reward_rubric(),
         }
 
     def billing_manifest(self) -> dict[str, Any]:
@@ -391,6 +392,61 @@ class SystemState:
             "rate_limit_cost": self.config.rate_limit_cost,
             "current_budget_credits": round(self.budget_credits, 3),
             "current_resource_units": self.resource_units,
+        }
+
+    def reward_rubric(self) -> dict[str, Any]:
+        breakdown = self.last_reward_breakdown
+        entries = [
+            {
+                "name": "uptime",
+                "score": breakdown.get("uptime", 0.0),
+                "weight": 1.0,
+                "objective": "maximize service health while incident response continues",
+            },
+            {
+                "name": "resource_cost",
+                "score": breakdown.get("resource_cost", 0.0),
+                "weight": 1.0,
+                "objective": "discourage expensive or recurring-capacity shortcuts",
+            },
+            {
+                "name": "security",
+                "score": breakdown.get("security", 0.0),
+                "weight": 1.0,
+                "objective": "penalize unsafe permissions and open security flags",
+            },
+            {
+                "name": "root_cause_progress",
+                "score": breakdown.get("progress", 0.0),
+                "weight": 1.0,
+                "objective": "reward fixing the hidden root cause rather than symptoms",
+            },
+            {
+                "name": "anti_gaming",
+                "score": breakdown.get("anti_gaming", 0.0),
+                "weight": 1.0,
+                "objective": "penalize invalid actions, duplicate proposals, and do-nothing loops",
+            },
+            {
+                "name": "negligent_audit",
+                "score": breakdown.get("negligent_audit", 0.0),
+                "weight": 1.0,
+                "objective": "assign responsibility for reckless approvals",
+            },
+            {
+                "name": "terminal",
+                "score": breakdown.get("terminal", 0.0),
+                "weight": 1.0,
+                "objective": "reward clean recovery and penalize terminal failures",
+            },
+        ]
+        total = sum(float(entry["score"]) * float(entry["weight"]) for entry in entries)
+        total += breakdown.get("step_penalty", 0.0)
+        return {
+            "type": "ops_committee_composable_rubric",
+            "entries": entries,
+            "step_penalty": breakdown.get("step_penalty", 0.0),
+            "total": round(total, 3),
         }
 
     def policy_manifest(self) -> dict[str, Any]:

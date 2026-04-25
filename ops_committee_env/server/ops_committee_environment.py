@@ -236,6 +236,7 @@ class OpsCommitteeEnvironment(
             registered_tools=list_tool_specs(self._world.config),
             billing_manifest=payload["billing_manifest"],
             committee_handbook=payload["committee_handbook"],
+            rubric=payload["rubric"],
             done=self._world.terminal_reason is not None,
             reward=self._world.last_reward_breakdown.get("total"),
             metadata={

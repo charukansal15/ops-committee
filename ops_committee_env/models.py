@@ -117,6 +117,10 @@ class OpsCommitteeObservation(Observation):
         default_factory=dict,
         description="Read-only audit responsibilities and policy/rubric contract.",
     )
+    rubric: dict[str, Any] = Field(
+        default_factory=dict,
+        description="Composable reward rubric entries for the latest step.",
+    )
 
 
 class OpsCommitteeState(State):

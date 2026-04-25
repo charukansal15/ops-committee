@@ -20,34 +20,39 @@ Primary themes:
 - Theme 4, Self-Improvement: later phases escalate chaos difficulty based on
   performance history.
 
-Phase 1 status:
+## Results
 
-- Deterministic Python state machine.
-- Hidden ground-truth system metrics.
-- Partial-observability observation generator.
-- OpenEnv-shaped `reset()`, `step()`, and `state` wrapper.
-- Initial reward ledger for uptime, spend, safety, and anti-gaming penalties.
+![Reward Comparison](artifacts/reward_comparison.png)
+*Rule-based committee vs random baseline across all 3 chaos levels.*
 
-Phase 2 status:
+![Training Loss](artifacts/training_loss.png)
+*SFT loss over 200 training episodes — run via `training/ops_committee_colab.ipynb`.*
 
-- Agent-facing tool registry with reserved-name validation.
-- Mutating Fixer tools are routed into pending proposals.
-- Banker and Shield audit proposals with `approve` or `veto` decisions.
-- Approved proposals execute only after both audits are present.
-- Vetoed proposals are cleared and returned as structured feedback.
-- Observations include `pending_proposal`, `committee_status`, and
-  `registered_tools`.
+| Policy | Avg Reward | Clean Recovery | Failure Rate |
+| --- | ---: | ---: | ---: |
+| Random approve-all | -82.5 | 11.1% | 55.6% |
+| Rule-based committee | +69.8 | 100.0% | 0.0% |
+
+## Phase Status
+
+Phase 1 — Deterministic state machine, partial observability, 3-level chaos curriculum.
+Phase 2 — Multi-agent veto protocol: Fixer proposes, Banker and Shield audit.
+Phase 3-5 — Composite rubric reward, eval pipeline, TRL training scaffold.
 
 ## Local Smoke Test
 
-The core simulator can run without OpenEnv installed:
-
 ```powershell
 python -m unittest discover tests
+python training\eval.py
+python scripts\run_demo.py
 ```
 
-Once OpenEnv dependencies are installed, the server entry point is:
+## Training
 
-```powershell
-uvicorn ops_committee_env.server.app:app --host 0.0.0.0 --port 8000
-```
+Run `training/ops_committee_colab.ipynb` on Google Colab (T4 GPU).
+Builds a 900+ example SFT corpus, trains with TRL SFTTrainer, saves loss plots.
+
+## Links
+
+- 🤗 HF Space: https://huggingface.co/spaces/YOUR_HF_USERNAME/ops-committee
+- 📝 Blog / video: YOUR_LINK_HERE
